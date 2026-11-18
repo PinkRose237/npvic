@@ -1,0 +1,934 @@
+{
+  "checkedAt": "2026-11-18T00:21:02.035Z",
+  "today": "2026-11-17",
+  "revision": 2,
+  "revisedAt": "2026-11-18T00:17:32.241Z",
+  "membershipVerifiedAt": "2026-11-18T00:21:02.035Z",
+  "links": {
+    "membership": "https://www.ncsl.org/elections-and-campaigns/national-popular-vote",
+    "allocation": "https://www.archives.gov/electoral-college/allocation",
+    "election": "https://www.ncsl.org/news/details/2026-state-legislative-elections-the-results-and-what-they-mean",
+    "compact": "https://www.nationalpopularvote.com/bill-text",
+    "legal": "https://www.congress.gov/crs_external_products/R/PDF/R43823/R43823.8.pdf",
+    "video": "https://www.youtube.com/watch?v=mlT1dY4xV8o",
+    "reporting": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/",
+    "ap": "https://apnews.com/article/ac5d917e582ee02e813615a91c6a1f5c",
+    "nevada": "https://www.leg.state.nv.us/App/NELIS/REL/84th2027/SessionInformation",
+    "shapiro": "https://penncapital-star.com/voting/pennsylvanias-democratic-trifecta-renews-calls-to-join-popular-national-vote-compact/",
+    "ford": "https://www.kolotv.com/2026/11/12/incoming-nevada-governor-says-electoral-college-was-created-with-racist-underpinnings-calls-state-join-popular-vote-compact/"
+  },
+  "forecast": {
+    "modelVersion": "1.0.0",
+    "cutoff": "2028-07-20",
+    "threshold": 270,
+    "members": {
+      "California": 2011,
+      "Colorado": 2019,
+      "Connecticut": 2018,
+      "Delaware": 2019,
+      "District of Columbia": 2010,
+      "Hawaii": 2008,
+      "Illinois": 2008,
+      "Maine": 2024,
+      "Maryland": 2007,
+      "Massachusetts": 2010,
+      "Minnesota": 2023,
+      "New Jersey": 2008,
+      "New Mexico": 2019,
+      "New York": 2014,
+      "Oregon": 2019,
+      "Rhode Island": 2013,
+      "Vermont": 2011,
+      "Virginia": 2026,
+      "Washington": 2009
+    },
+    "committed": 222,
+    "remaining": 61,
+    "max": 283,
+    "estimates": [
+      {
+        "name": "Lower",
+        "probability": 0.028958760338366488
+      },
+      {
+        "name": "Central",
+        "probability": 0.13505693851795098
+      },
+      {
+        "name": "Higher",
+        "probability": 0.35749061353367373
+      }
+    ],
+    "minimumPaths": [
+      {
+        "joins": [
+          "PA",
+          "MI",
+          "WI",
+          "NV"
+        ],
+        "total": 272
+      },
+      {
+        "joins": [
+          "PA",
+          "MI",
+          "AZ",
+          "NV"
+        ],
+        "total": 273
+      },
+      {
+        "joins": [
+          "PA",
+          "MI",
+          "AZ",
+          "WI"
+        ],
+        "total": 277
+      }
+    ],
+    "required": [
+      "PA",
+      "MI"
+    ],
+    "backtest": {
+      "joined": 3,
+      "missed": 4,
+      "probability": 0.4444444444444444,
+      "brier": 0.2571720116618076,
+      "cohorts": [
+        {
+          "year": 2018,
+          "joined": [
+            "Colorado",
+            "New Mexico"
+          ],
+          "missed": [
+            "Maine",
+            "Nevada"
+          ],
+          "source": "https://ballotpedia.org/Trifecta_vulnerability_in_the_2018_elections"
+        },
+        {
+          "year": 2019,
+          "joined": [],
+          "missed": [
+            "Virginia"
+          ],
+          "source": "https://ballotpedia.org/2019_election_analysis%3A_State_government_trifectas"
+        },
+        {
+          "year": 2022,
+          "joined": [
+            "Minnesota"
+          ],
+          "missed": [
+            "Michigan"
+          ],
+          "source": "https://ballotpedia.org/Election_results%2C_2022%3A_State_government_trifectas"
+        }
+      ]
+    },
+    "states": [
+      {
+        "code": "PA",
+        "name": "Pennsylvania",
+        "governor": "Josh Shapiro",
+        "changed": "Senate flipped",
+        "label": "Governor expressed interest",
+        "summary": "Shapiro signaled openness to working with lawmakers. A filing and a Senate floor vote would turn that interest into a legislative path.",
+        "watch": "Watch for a new filing, a Senate committee referral and a clear commitment from Shapiro.",
+        "signals": [
+          {
+            "label": "Governor open to exploring adoption",
+            "shift": 0.3,
+            "url": "https://penncapital-star.com/voting/pennsylvanias-democratic-trifecta-renews-calls-to-join-popular-national-vote-compact/"
+          }
+        ],
+        "bills": [
+          {
+            "id": "HB 270",
+            "session": 2025,
+            "stage": "introduced",
+            "date": "2025-04-09",
+            "closes": "2026-11-30",
+            "url": "https://www.palegis.us/legislation/bills/2025/hb0270",
+            "code": "PA",
+            "route": "bill",
+            "action": "Referred to Intergovernmental Affairs & Operations"
+          }
+        ],
+        "votes": 19,
+        "isMember": false,
+        "active": null,
+        "stage": "Awaiting new filing",
+        "limitedWindow": false,
+        "estimate": 0.518259041581648,
+        "range": [
+          0.3237552938417929,
+          0.7076021026013721
+        ]
+      },
+      {
+        "code": "MI",
+        "name": "Michigan",
+        "governor": "Jocelyn Benson",
+        "changed": "House flipped",
+        "label": "Prior trifecta stalled",
+        "summary": "Michigan considered the compact during its 2023–24 Democratic trifecta and did not enact it. Benson’s position and a House floor vote are key signals.",
+        "watch": "Watch for a new bill, action by House leadership and a public position from Benson.",
+        "signals": [
+          {
+            "label": "Previous Democratic trifecta did not enact the compact",
+            "shift": -0.25,
+            "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/"
+          }
+        ],
+        "bills": [
+          {
+            "id": "HB 6213",
+            "session": 2025,
+            "stage": "introduced",
+            "date": "2026-07-14",
+            "closes": "2026-12-31",
+            "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6213&printerFriendly=true",
+            "code": "MI",
+            "route": "bill",
+            "action": "bill electronically reproduced 07/03/2026"
+          }
+        ],
+        "votes": 15,
+        "isMember": false,
+        "active": null,
+        "stage": "Awaiting new filing",
+        "limitedWindow": false,
+        "estimate": 0.38931820862817706,
+        "range": [
+          0.2201091179210413,
+          0.5886677267656757
+        ]
+      },
+      {
+        "code": "AZ",
+        "name": "Arizona",
+        "governor": "Katie Hobbs",
+        "changed": "House and Senate flipped",
+        "label": "Senate leadership support",
+        "summary": "Incoming Senate President Priya Sundareshan said her caucus is prepared to take up the compact. Hobbs’s position is a key open question.",
+        "watch": "Watch for a new filing in either chamber and a public commitment from Hobbs.",
+        "signals": [
+          {
+            "label": "Incoming Senate president signaled agenda support",
+            "shift": 0.3,
+            "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/"
+          }
+        ],
+        "bills": [
+          {
+            "id": "SB 1300",
+            "session": 2026,
+            "stage": "closed",
+            "date": "2026-06-13",
+            "url": "https://apps.azleg.gov/BillStatus/BillOverview/84834"
+          },
+          {
+            "id": "HB 4013",
+            "session": 2026,
+            "stage": "closed",
+            "date": "2026-06-13",
+            "url": "https://apps.azleg.gov/BillStatus/BillOverview/85524"
+          }
+        ],
+        "votes": 11,
+        "isMember": false,
+        "active": null,
+        "stage": "Awaiting new filing",
+        "limitedWindow": false,
+        "estimate": 0.518259041581648,
+        "range": [
+          0.3237552938417929,
+          0.7076021026013721
+        ]
+      },
+      {
+        "code": "WI",
+        "name": "Wisconsin",
+        "governor": "David Crowley",
+        "changed": "House and Senate flipped",
+        "label": "Early-session priority",
+        "summary": "Sen. Kelda Roys identified the compact as an early-session priority. Gov.-elect Crowley expressed interest in talks with legislators.",
+        "watch": "Watch for companion bills, early committee notices and Crowley’s position on signing.",
+        "signals": [
+          {
+            "label": "Public legislative priority and governor-elect interest",
+            "shift": 0.45,
+            "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/"
+          }
+        ],
+        "bills": [
+          {
+            "id": "SB 1117",
+            "session": 2025,
+            "stage": "closed",
+            "date": "2026-03-23",
+            "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb1117"
+          },
+          {
+            "id": "AB 1152",
+            "session": 2025,
+            "stage": "closed",
+            "date": "2026-03-23",
+            "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab1152"
+          }
+        ],
+        "votes": 10,
+        "isMember": false,
+        "active": null,
+        "stage": "Awaiting new filing",
+        "limitedWindow": false,
+        "estimate": 0.5537198520912711,
+        "range": [
+          0.3558917467803839,
+          0.7364824802754766
+        ]
+      },
+      {
+        "code": "NV",
+        "name": "Nevada",
+        "governor": "Aaron Ford",
+        "changed": "Governor flipped",
+        "label": "Governor-elect supports joining",
+        "summary": "Ford supports joining. Both chambers passed a bill in 2019 before a veto. The 2027 regular session is the main opportunity before July 2028.",
+        "watch": "Watch for a standalone bill in the 120-day session beginning February 1, 2027. A constitutional amendment has a longer path.",
+        "signals": [
+          {
+            "label": "Governor-elect publicly supports adoption",
+            "shift": 0.6,
+            "url": "https://www.kolotv.com/2026/11/12/incoming-nevada-governor-says-electoral-college-was-created-with-racist-underpinnings-calls-state-join-popular-vote-compact/"
+          },
+          {
+            "label": "One regular legislative session before the cutoff",
+            "shift": -0.35,
+            "url": "https://www.leg.state.nv.us/App/NELIS/REL/84th2027/SessionInformation"
+          },
+          {
+            "label": "Both chambers previously passed a standalone bill",
+            "shift": 0.2,
+            "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bills/Vetoed"
+          }
+        ],
+        "bills": [
+          {
+            "id": "AJR 6",
+            "session": 2025,
+            "stage": "closed",
+            "date": "2025-06-03",
+            "route": "amendment",
+            "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11957"
+          }
+        ],
+        "votes": 6,
+        "isMember": false,
+        "active": null,
+        "stage": "Awaiting new filing",
+        "windowEnd": "2027-05-31",
+        "limitedWindow": false,
+        "estimate": 0.5537198520912711,
+        "range": [
+          0.3558917467803839,
+          0.7364824802754766
+        ]
+      }
+    ]
+  },
+  "review": {
+    "status": "ok",
+    "model": "deepseek-v4.1-flash",
+    "digest": "d2be6e6d15bab34ce10bfd91b5e9a6afcb0b5bb46b2d86166584395f2f744388",
+    "items": {
+      "news-8647c2a3b1bef6": {
+        "tag": "Background",
+        "states": [
+          "WI"
+        ]
+      },
+      "news-c10a1961856e68": {
+        "tag": "Legislative outlook",
+        "states": []
+      },
+      "news-233204d984405e": {
+        "tag": "Legal analysis",
+        "states": []
+      },
+      "news-55ddc3123d6cce": {
+        "tag": "Bill activity",
+        "states": []
+      },
+      "news-a63fcd11fd505d": {
+        "tag": "Legislative outlook",
+        "states": []
+      },
+      "news-18b25383e683cd": {
+        "tag": "Legislative outlook",
+        "states": []
+      },
+      "news-ccd7618c07a1d9": {
+        "tag": "Background",
+        "states": []
+      },
+      "news-1749c8426ab11b": {
+        "tag": "Legislative outlook",
+        "states": []
+      },
+      "news-82ba6f5bd8f81e": {
+        "tag": "Governor position",
+        "states": [
+          "NV"
+        ]
+      },
+      "news-8dae8889530489": {
+        "tag": "Legal analysis",
+        "states": []
+      },
+      "news-1b9726872313d1": {
+        "tag": "Legislative outlook",
+        "states": []
+      }
+    }
+  },
+  "news": [
+    {
+      "title": "Why the National Popular Vote Compact Would Be a Disaster for Wisconsin, and the Country",
+      "source": "MacIver Institute",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPOU1jUmtRV2JDMkItNW14ZDdTU1BRZ3hpZkNsSU9ZWFZRTmhiQW0yR0R4QzRkTWZkb1pnSnVDMkM5d1FDX0MxbDAxdnhyQlZ6cnVUSWwzTEVDTU5NZ25Ec1A2aHNyMzZ5MElYU1ZOLUFxNUp3WWt4LXNsTzd1NDdmTDNBZFljVWhrLW5rYzNqZXpJT05iVDBwM2Y0eDdVNXg0TXdLSEJiSU1rM1FsVkRSTldUWF9HMk96R09veDY1OEVRbHBNOUtwWTVtTWdEZw?oc=5",
+      "date": "2026-11-17",
+      "states": [
+        "WI"
+      ],
+      "id": "news-8647c2a3b1bef6"
+    },
+    {
+      "title": "Could five states push the national popular vote compact over the 270-vote threshold before 2028?",
+      "source": "Latin Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQa1VtMU8xTkxRY2ROMllmWnZ1WkNwQnBORFZsQnRFdmtUMUE5cXFnUE93NDJiMjFGSk9Bc09vdTItZzVBZzJ5X3Nic2x3cjBoQ0N2VjlsNU40ZmIzdWoxTDFxMGlMNkVMTjFpQ2VPaFBZM0RycE41czZQZGhfY3hXXw?oc=5",
+      "date": "2026-11-17",
+      "states": [],
+      "id": "news-c10a1961856e68"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "Five new Democratic trifectas could clear the compact threshold",
+      "source": "Ballotpedia",
+      "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/",
+      "states": [],
+      "tag": "Legislative outlook",
+      "id": "news-c212c0966f6728"
+    },
+    {
+      "title": "Will the next presidential election be determined by the National Popular Vote Interstate Compact?",
+      "source": "University of Illinois Urbana-Champaign",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFA0ZkpmbzJJOGVpenA4ZnRuQUVNV201elJNZ0UxZC1FWG9WanVkTFVxQTFSVnRwcjZ0V1F0ZHk5dWlnb1BaeFRiOUcxU3pLNVZBRFZlZGpmdm8wdFJ1aVNrbHBla3ctYmpMQkllRzdmdUgxbURXUlE?oc=5",
+      "date": "2026-11-16",
+      "states": [],
+      "id": "news-233204d984405e"
+    },
+    {
+      "title": "Tell State Legislatures: Pass National Popular Vote",
+      "source": "Common Cause",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONDQ3Umo2MzRzeklaYUVPZHlrRU1JOXJkcEp0VzY2Zll3cnJXUXFsRDk0eFBmeUpvaVJzdlAyT2N3THBtRTV5ajlrR0hYbjQtc3FuYmlyaV9Mbm9iRGFaRU5QRjh6bGxkaEI2dmJzRVpnN3hWR3p4QURsVGRuOW1WU2txUmtuTi1xSzhiU19NUEU?oc=5",
+      "date": "2026-11-16",
+      "states": [],
+      "id": "news-55ddc3123d6cce"
+    },
+    {
+      "title": "Democrats’ Push for National Popular Vote Could Reshape the 2028 Presidential Election",
+      "source": "HotAir",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxORzVpRi1Td3ZSdUZEY1pWQmp6V2hldGk5VHBSXzhtZzlOQTZxWWd2NXhZbkpLQWRrSXBDRU1LLTBBbkJzMUlES0hYWWNmNEhXUnJZYXMwVWFpbjN3Ml9ZVXZEVkZmNWk4SVZfRzRSZWo4RWtjbkQ4cEhuTlhfV3pzc21yN05RNVRvTmxsUTBrZlZiNlFuSUdKOHNsM3BzdjZfSXJNTlp4YVQwVnQ4bUVuRHhNNmtJcTROZzYyMU9fZDl4RjJqem5oeEl4cw?oc=5",
+      "date": "2026-11-16",
+      "states": [],
+      "id": "news-a63fcd11fd505d"
+    },
+    {
+      "title": "Democrats’ Midterm Gains Could Trigger National Popular Vote Compact Before 2028",
+      "source": "National Review",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVUxELU5FN3RqUmRzRXQzWlZPM3lZY0FCRHZXbDNTaTkyeUJFM2RmbUVlZGhQMXdNUWx6ZGxiSkhBTkg4bUJicEdQSVA3OXdlN0ZrR0VNTlpBSnhGWnNUZ2RKQ2FOQjdhUTZSd29ueGUtcEl5ZTdqUXIwaGVGd0pXNlhLV3Jzb2lnSWF1cHI1elpGM0Y5bWc?oc=5",
+      "date": "2026-11-15",
+      "states": [],
+      "id": "news-18b25383e683cd"
+    },
+    {
+      "title": "Ready for a national popular vote for president in 2028?",
+      "source": "DemocracySOS",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE11eEZCZWpvNmZpYU9YQVNZTW9wSEUxY1VORkwxdndYbExYTF9jN3E4TjNhU2R3Y0drSUxfNGxNcmtwMWo0Z1M4Tl9mcTV1OUg1Q1lFT29mTWl6YmxlTzZzTHZpaE1GS0RWd09KbVdVaGw2aS1KVzNfSA?oc=5",
+      "date": "2026-11-14",
+      "states": [],
+      "id": "news-ccd7618c07a1d9"
+    },
+    {
+      "title": "Analysis | Will Democrats pursue a national popular vote?",
+      "source": "The Washington Post",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSTFMaTdDSl8zUTlfRnZWQWE5V3F6cU1xdkFGM2N5TVR2aUNtX0owVnFKa091OVdNWHhxWG5Qa29zd1ZaU3lMbXItMGhuTUZZanhkSjJwTHc0T3hoX3FMbjR2bHNNWnM3VnFycUhPa2N0UFlpVDdGNWpOZHZ4YW00eFRVTDBWMk4xQVRzRVQxVTdZUHBRNndwRHp3bw?oc=5",
+      "date": "2026-11-13",
+      "states": [],
+      "id": "news-1749c8426ab11b"
+    },
+    {
+      "title": "Letter: Maine shouldn’t abandon popular vote compact",
+      "source": "Bangor Daily News",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcTNIOUdlZHhRbXVveVpPT29SRjZGdWt4QzdGcVFQRE9ObTBKZk9sV1luaTQ4TF9CN3lhLVZSRjFuV1I5a2VCamRGcTl4bll6dXUwNlNLR3o5azRQbkFxNVRodldpVXRpZEhralVON2pNMUhKM2JBb0gyLUVLY0k1T2lENlBtM21HS19PWHlxbE8xN2xoX05SWTJUcUxJaFVFMFktVVpwcDFCdjZYRXRhVnFuZTZIc1dnSGN4OHRR?oc=5",
+      "date": "2026-11-13",
+      "states": [],
+      "id": "news-1b4810f16ef1d5"
+    },
+    {
+      "title": "Nevada governor-elect floats joining popular vote compact because Electoral College has ‘racist underpinnings’",
+      "source": "Washington Examiner",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNSE5PclJKSldrYVc1aVNYTVRuWVFNMGFfRzMteXZvYXBlQlNCTURfRXoxZ2V2R0R4WmZDTUNrVFNZRU9henpkbFdIN09YYVpWOHRHaTUwemw5UmR5RHZVdWd4aFZQOVJUOHFwSHRqRnVGMWVsU0tsSmoxcWJfNXIwaDJhOUQ4RTRxN25JemM0UldicGpnUDBieWswNVRrbkV0UExuZGctMm54eGl4amZXWHhRUlZERmExVEZnRHJ2ZjkyTnJqNlFwLUR5RHA1Z3o5YnBuWQ?oc=5",
+      "date": "2026-11-13",
+      "states": [
+        "NV"
+      ],
+      "id": "news-82ba6f5bd8f81e"
+    },
+    {
+      "title": "Electoral College: Democrats Could Use National Popular Vote Compact to Bypass",
+      "source": "National Review",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9aVGNfLUllbkRCZ0NrbExNbm03N1FDamdmaUFpY01MdUlGWUFTM2gwTmxFbnVqN0lkVDBCUnlJdE9ZYjNBdW1vNDBfTFkwM3oybndkYTE1ekFrRVpRYVlOOVFSZEtlT2FaS3lxY3I1bHB1UG5FbzVnag?oc=5",
+      "date": "2026-11-13",
+      "states": [],
+      "id": "news-8dae8889530489"
+    },
+    {
+      "title": "Democrats are now positioned to pass the National Popular Vote in 2027",
+      "source": "Daily Kos",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRTVMVm00ci13bTY5V3I0YUJiNWF2NXU0cUFYNTBlcVEzNmlaZks1NXh5a09aa0VwbnoyYXZqV0hQb1NIRFNtNmRBZWR3VXBoVW84bmhrQW1XQjFyQkN5RGVSZDNTcW1KRUkxY1FDbk9mREhyRWthZnZIUkduWmg4NFREX2RtaWdoV3JmdUlEazQwWWU5dnNGNHZoY0dKTTEwcl84SlVKRjVPT1g0VVZVRFNMTTBXdnc?oc=5",
+      "date": "2026-11-12",
+      "states": [],
+      "id": "news-1b9726872313d1"
+    },
+    {
+      "title": "About the National Popular Vote Compact",
+      "source": "Daily Kos",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQaDVDZDcxdXdNX1dJRDd1VzVsd0NsTnFyZk9VRVRHQlp3cHd3V29zWFI0ZHBjX0tjdHdGZGE3VDJ3ZjBVdjdmQTd1M05ZQkYtSEFCV290Q19lb1ktNjZxVzRkWl8yQTlvZ0QyREdzTnk2Uk5Bb2ZXVGd5YmVodnpranJ6eE16aXVWX01KMjE2WGpTQVA3elpYWDVMOU5INUpHcVFlV09qTQ?oc=5",
+      "date": "2026-11-12",
+      "states": [],
+      "id": "news-2571c4042361f5"
+    },
+    {
+      "title": "New Democratic trifectas in five states could provide enough electoral votes for National Popular Vote Interstate Compact",
+      "source": "Ballotpedia News",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQeDhMRVNKZW4xcG5ibkI5TVQ5dzdsMjRfUFNNTHp5d2Iydmdoa0Q2c1c1YU5VN3Q5R0dlS1dXRGNqN3dOUnU5bnJxRnJIclhBNlZfYkh1VE5JOFJ6NXprWThPd2tQdU42TUV3NmFyVlZVaU5VbHdNelk4RHFQTXhQLVVlUzF2MjFKWUZyTFNSMzItbGNwOGhtMDhKZ1c1MS1XZDdXUUJGdmhRVHRUbl9scTcyWm5BbU0zbUhjclh5anhtWmxzR1IyR1RUNk1Yc0Z6Q1RJdTdBQ25VOHNoMVVHU0ZGeWtBcHFKdHNCWU8yaGY4cTlM?oc=5",
+      "date": "2026-11-12",
+      "states": [],
+      "id": "news-2bda8eb9642b52"
+    },
+    {
+      "title": "Even Tony Evers Is Warning Democrats Against the National Popular Vote Interstate Compact",
+      "source": "KSLM Radio",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZ2tMSzJGY3ozQUEzaDVLeE1LYUw0SjlmMi04a1FSdlMzUVN1eVlISkdrV2RudGI3SXVqXzIxaUhkRGdnRE1FSzRXTWlySGg0blNYdkd2UF9mNklLcVUweUFzMEdUeFNUNmMtaS1oLTl4eF95Q0ROa1lIZ1I5REJ1cXktYUpJR2tQVWdlTVRWY0tONzFUNTYwS1RWWjJWdFU1TGVybHdKa3dteW44bEdXOHRwcWdSRU9rMC1LTjlQSmN1TWM?oc=5",
+      "date": "2026-11-12",
+      "states": [],
+      "id": "news-7bb60e8de827ef"
+    },
+    {
+      "date": "2026-11-12",
+      "title": "Nevada Gov.-elect Aaron Ford calls for joining the compact",
+      "source": "KOLO",
+      "url": "https://www.kolotv.com/2026/11/12/incoming-nevada-governor-says-electoral-college-was-created-with-racist-underpinnings-calls-state-join-popular-vote-compact/",
+      "states": [
+        "NV"
+      ],
+      "tag": "Governor position",
+      "id": "news-7bf4cfb91cf8d1"
+    },
+    {
+      "title": "National popular vote compact would change how Wisconsin awards electoral votes",
+      "source": "WBAY",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOV3VsanhDck5GaXpuRnhaZG9mNXpMRzdEYlk1ZHhpV2lZTEswYTJ6ZzA4Y3RiYkhrLWRVWC1mZ2hVMGJ1WExuYm4yWEdyZ3lGVGNlOExTYjhma2w0NUtETXZQUVJFUFNMTHdmRnZkaUdRVVZnOGRSUUhscG9nbUZQX1RzQkQ0bS0ySHFFaE12X0ZwTFY0UUdGZFlrUjExY3YyQi1nZnBJLXVFejItX19BalFn0gHGAUFVX3lxTE5uRl80VVg2bVdIVlVRMGN2azFoeGpXbnJoYWlWRnhzZThKRjBGU0pvQUJkLUdXRTRuano1V3pPd3B1eF82c1ZLUmxFSm9VYUtHaWthZnpQeDRQZ3kzTmNVS01XMkt0aW54UnYtRFMzUTU4dUZoanlKdHNLN0lHSXNsTDlPRTZOMXJZU0hPNTlQRjhqcWdVWFZsTWo1aEROZTNrN04zWWJyMGpvekh5Zm11WWxWdlBaZ0VkMVdrWTU5cXFEYjJnQQ?oc=5",
+      "date": "2026-11-12",
+      "states": [
+        "WI"
+      ],
+      "id": "news-86a983a0a6c51b"
+    },
+    {
+      "title": "Incoming Nevada governor says the Electoral College was created with racist underpinnings, calls for state to join popular vote compact",
+      "source": "KOLO | 8 News Now",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPOHY2Vm5uUkQ5aHdMQUlGUWt1WTk2bWI1NGU3bWRJUmdESjUxZHRSWEQzWEFEakZmaktKZW9WOHNLZk1nQmRLS0JpTG9DZEt0ZmZLcWhyTVZuU2hVWGxvTVdwcFpEQVZrODMxYUVvZDE0R3lfb19IMldjR3BCRWJTb0xoQVRMZWs0VlZOYmNtRzh0eTdqVVBKaWxjNkgzbUJyOTUwc2VaTGhXUXlYMXZXWTZnN2RYUi1sd2h1WHpja005N1A3Z2hIZnRTQXFScl9NR0dlMTFKMkxPWjdndnVpalJudGZrSFRzTkdBVnVpb9IBgwJBVV95cUxOelVIX1NzdW1jV0M4emdXQ2w4VGhRXzFidzVWM2VvTVBJZ2JNdDR5YUhjd0h0V2NVaDZrRFQxWkRGcjFHWWtIZnE2aGQ0N3ZIRjJndlExbVBCQ2JKY01PQkd6R1VnN2dnbXJJVGtfaG1lQW80bm1iRWJqU2R1WVhMdFlkVERVMDZsV0ZvX2llenF3RE83aW10bU5oZkdKTnJnNHpjMXV6WFNOM2dKcWg4X21CR3U3NHNkYWhCajYwQUdVb1AyQkRTUzJLZksweFpBc1JWNkY5YW92Q0p6MnR0eXU2allzWGszR2hhaE5DXzVpbDhhRUxWUC1HT0hwRF85YW5z?oc=5",
+      "date": "2026-11-12",
+      "states": [
+        "NV"
+      ],
+      "id": "news-cbc3b462997fb8"
+    },
+    {
+      "title": "Even Tony Evers Is Warning Democrats Against the National Popular Vote Interstate Compact",
+      "source": "Townhall",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPRWcxdm1kazc5bU1BcUZuVVBqYWx0RHFaUnRLUGFNUzhwWUhabTRPdlRFVjFOanl1eFlTY0xvUkJCUThsbjRxak1RTmFCZUF5UTA5TzJjeUszSE1jYWFnVEV1aXR1dVJLR1NwcHNRY0ZTVmJsNV92NDluZ1U2NkNWOUFwRTBwTU5NMmlxYnU5VjBDbk9wMGp0c0RUVklXWXZZV0hhcA?oc=5",
+      "date": "2026-11-12",
+      "states": [],
+      "id": "news-f0b58c29e67e3d"
+    },
+    {
+      "title": "The Pushback Chronicles: National Popular Vote Interstate Compact Approaches Finish Line",
+      "source": "Daily Kos",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOVS1IVGY3LWtqc3JqVDltYUpZVG1zZENodnFJaXBOTmhISVdJanhuZXVjMTFVRVR4UG8yMV9MVWdJSHR4VmwtdDlXeU5HXzlzaWJHaXhSUmkzTGJXa1hwTE8zZG5FeHl0V3JIMkNtOXE1U1VRSGRzbDZ1OHE2QU1qVHFBNnRpSUpSVlUtQ1dGbndsLXlHZFR0YVdpa3ZuT3VaRWdqLUdsakRZU0hwNGZBRldPWWN6LWZyMjhMcDg3VlRtMXdncDhXbnhtQ0daSEpSYWVaQzU4RXVzbmlJcWdRMDlNQQ?oc=5",
+      "date": "2026-11-11",
+      "states": [],
+      "id": "news-63f3983d23afcc"
+    },
+    {
+      "date": "2026-11-10",
+      "title": "New statehouse majorities open a path to compact adoption",
+      "source": "Associated Press",
+      "url": "https://apnews.com/article/ac5d917e582ee02e813615a91c6a1f5c",
+      "states": [],
+      "tag": "Legislative outlook",
+      "id": "news-0dd47695f16f5e"
+    },
+    {
+      "title": "Shapiro signals support for national popular vote as Democrats eye compact expansion",
+      "source": "FOX43",
+      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPU3BmY0t6QTVlZUFtdVplVDdHaUhsRE41WVBoYUZKZkNENUFvWHhlOGNUVTN2cWJ2bjZIUmFJenFOMk5MVkJyQzQ3a2RtTVVUbUlEVldHbU9XNlhGR21ySHlpbDRlSG9LeFZlcEtPSkk1Y2RPSVpSZjNJNXRqWHhEM3d6SWtxbzJnY3BrbF95Tko4N2ZoVG55SWY5QWZFN19XRzgyV19qMUhTZDRJaWVBNkR0T2E0NnptQ0xEYTdXMTVFZzJsVFF1UFEzYTBhbjJFcFZ0T0NaWFIwR25rcDRvMTZOQk1yQlh6c2Q3Z0tEYnhoNTlLSlZQT09peU1Fdks2enhZMjhvMGVOc3NLdXkxVV9aa0hxQQ?oc=5",
+      "date": "2026-11-10",
+      "states": [],
+      "id": "news-204f4e5cb9f8d0"
+    },
+    {
+      "title": "Democrats plot their course on national popular vote",
+      "source": "Politico",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQLUlaZUtiRnR5UmZjaFJfaFZtdm4zbkpoODdKdEhwMUhwZW5LRU1WRE1xV1V3MWVlRklBX2lLNUJ3VV91anIxYk82d3B3czZibFV3ZnA0anNpSDkyb1FiQlctY1BXLUNKcVhhRVd1RVl3QkVhSmdMV3NtUXo1YnFScElpYnJCMHk1WmNFRDUwcmJSRnRtRVd0V1otdGpMUmpmbFJDODRwblFOWHRYaFNQanlYbThzU0ozZUVRdjF3X2lMWlc3QmJqcTNqQVZvZ051Rnc?oc=5",
+      "date": "2026-11-10",
+      "states": [],
+      "id": "news-3f0f793fc18793"
+    },
+    {
+      "title": "Democratic sweeps are renewing momentum behind the National Popular Vote Interstate Compact",
+      "source": "Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOWNYSFVlbVVWN0NlZDBYUXQyc0VQYlFlOTlYbHdqZ3B5Y2JhcnlNRy1JMWMwVHd5aGRpWU1HQjU3RjREdmt1eXRZdXJSd19zZEZHUER1SjNFUDh6Q0JYQWZrRXJrYVgzUzhqUVQtaFZIdHphOVFjREZ3ZFh1RG15dDZNdk5sV0tlcE5ILUV3N2JfZjNfZEE?oc=5",
+      "date": "2026-11-10",
+      "states": [],
+      "id": "news-5abd4112547e46"
+    },
+    {
+      "title": "Gov. Shapiro signals support for national popular vote as Democrats eye compact expansion",
+      "source": "FOX43",
+      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxOYXJ3Q1FsaXVidGQ4OWJlUWZJeDYxT3RXX21RMzFGZ0lfVHBtTGZvdG5OdU1RZ1lKdUlGVzV4WURZUkV4cUhlQUxjN2JGaXI5NUQ5ajBFZ3pITHotZWNfbnlNdV9QS1c3dmx2bEN0a084dW5VVGxRWVpELUg1bU9JWjluZ0RIUm5UWmhUYmhhVnkzbGFMLUs2TC05dTJnNEp6c2xmU3FDY1I0SkhtS0cxREhZcHVSYTk3OVhMbFZVX2RTcW5DZFNlZHpJZnNodmM1WmNrU0VidHJ1Sm9Ja01zejFYZmNKU09xaXpUTHA5VGxpMU9VSm94RTVZc3lVZzloaFJmUWxabmRjTWpyUHBtS1ZrZlRGMzZO?oc=5",
+      "date": "2026-11-10",
+      "states": [],
+      "id": "news-d0bfeba2764b37"
+    },
+    {
+      "title": "Pennsylvania’s Democratic trifecta renews calls to join National Popular Vote compact",
+      "source": "Pennsylvania Capital-Star",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcmxmMENfWU5FaWRCQmhHTWtXaWgyNTRrMWZMNGx3ZXU1UkdZY3BPdnFyTlFOU0NPWnhSclVHbXVtUlRSTHlDMHNxX29QZUF3c0xzYzI5RV81dEtvdkRLLU5xOUE4cVJxS2pZN1U3WWo0Wl9YWlpHeWpIWjRxMGY5d2RtZmQ2ekFFVUZZR1c1Z3FnaHBKbURHSlBCNXo4THFIa0E2WXVlQVBKbWs5bXlQRGlpRnoxYkQyaXJxamxR?oc=5",
+      "date": "2026-11-09",
+      "states": [
+        "PA"
+      ],
+      "id": "news-0ff8cf6242bf42"
+    },
+    {
+      "title": "Pennsylvania’s Democratic trifecta renews calls to join National Popular Vote compact",
+      "source": "Marietta Daily Journal",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNZ3JOazQwNVJGTFVNQS1aR2NnbU9aQm5RMzdKNGdPUnJoUjhMRk5qcWsxS2NUVDhtbkQ1S3V6bzM5cjd0bzZwY2t3aXBPd3h4SXM4VHVQYUlUaTU4cDFIZE1Tem9XdVRYMm41TXZ4bVNxRDU1RHplZ2pRRDFISmQ5ekhPR0w5Z05xSEdZaDJIdFN6REVmeE1KMGR5YUVveGFDakc5aVRCTHdscHNhWEg0clV0RUsyN1NiTkp2bGk2enpiNklvYUljVktFOU8takthT1NFbUlGOTFpN1ZSamtXWGR1WXRYWnUya0gwM2NOZ0RUMnBvLXBGOTY2VThVQ2hjeVE?oc=5",
+      "date": "2026-11-09",
+      "states": [
+        "PA"
+      ],
+      "id": "news-37e9e9458de636"
+    },
+    {
+      "title": "The National Popular Vote Interstate Compact Nears 270",
+      "source": "Leadership Now Project",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOWDlZNllxSUVQWUVlODBiemkzbFQ4WVBZVjBGajNGV0FsODEwNHZJNkVNNXJzWWZpc2dRbUZrWWoxSHBDRTdFQ2FqNG02Sl8talFnbC1HVHdWcHVTVWdOSGZ0MzN5QzRrYjlKOFdvUU9ORHBxWVFQUmJiejROTm5scm5yaGV5eF9WR3FYd2ZTN04yUQ?oc=5",
+      "date": "2026-11-09",
+      "states": [],
+      "id": "news-af1ccf71acaaed"
+    },
+    {
+      "title": "Gov. Shapiro says he’s open to the idea of instituting a national popular vote",
+      "source": "PennLive.com",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQZ0FScDNuVkRYMENrUWVDVWlDS1FVcjFXa01XVzJSQWg3NDNSRVdtaE05cHhINXBIUVk3R1dteXpaZzdrU1g4YU5KcUI5WWJLZ0w3M1BQa19kSmtEU294M3gwLXAxRGxjVE1JUlRBWFF0WFI4NHdzZnB6ck5zR1d0ekRUTXYtal9CUm9lSlVfVzlzY1dkNFFGSlhQM21scG9ETXV4eUpVTGZITU5qWGR6aXZWYWJZV3BWSW41QzhGODM?oc=5",
+      "date": "2026-11-08",
+      "states": [],
+      "id": "news-9aea521517f86b"
+    },
+    {
+      "title": "Initiative to Elect U.S. President by National Popular Vote May Be Within Reach; Connecticut Already On Board",
+      "source": "Connecticut by the Numbers",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTG1jWDRDeWMxNkc1RmJGSGExZWFMb0hlZ1NfTmo2Wmg2Y0o1NTV3WWxVMzY1YkZRNnIwQkY3Y3B5VXI4LVI1NTBzRGg2NEtwR1dPNzEyT1FybjAwbUlBX1VPS1VLc1BkdmsxaHA4MmZDTm16WndKZm9mMUxaeThVVm1iZDAwWVNxU25MU0hLUF9mbmJFNHpLVHZ1U0FleFhBWjVMb3BpWG9WLW9yRkNNLWtsLUVKTjRoYVhFTHZGWk5wM2ZhaWdZQnptTTFjVUw4SEczV2F2Wmc?oc=5",
+      "date": "2026-11-08",
+      "states": [],
+      "id": "news-a9ec8b21de7807"
+    },
+    {
+      "date": "2026-11-07",
+      "title": "Pennsylvania lawmakers revisit the compact after the Senate flip",
+      "source": "Pennsylvania Capital-Star",
+      "url": "https://penncapital-star.com/voting/pennsylvanias-democratic-trifecta-renews-calls-to-join-popular-national-vote-compact/",
+      "states": [
+        "PA"
+      ],
+      "tag": "Governor position",
+      "id": "news-494290e617a15d"
+    },
+    {
+      "title": "Arizona Democrats' midterm gains could pave way to National Popular Vote compact",
+      "source": "Axios",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZlBIcmZ4aHFHMlhBQzJOdF9GcVJZZG5NM0NtZXU0T29Oa2I5UGFvQl9zMGMtbGtfT080VUNncWNWZ0pYVFoxYlVwVkdGS0V2MnkxLWdlQkVYWmRUajdTdlNTZGhYd3BlN0V5T05jRTg0MlRybldXbWJXNWNySlpTQlVxbkRfLTRUSVhXQmkzeG5BS0VCNDBlWWtWWGVKX3ZqZVQ3bkJqTjZxTEoyRUE?oc=5",
+      "date": "2026-11-06",
+      "states": [
+        "AZ"
+      ],
+      "id": "news-5501a24a5213f0"
+    },
+    {
+      "title": "National Popular Vote",
+      "source": "Civic Media",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFAtMm9MbHJ5bDJGcmFnNTZqallmd3h2R21ac3c2U1lZU3JIU1YwRFlVWEJ0eG9jdkxISjRSUlktdjBUa01hN0MzdlpVaVZRdWs2WDNnSDk2bnFoM0RPa0hycWE0aXZFSGdld2psdDNrT1hyMzZWb0o0?oc=5",
+      "date": "2026-11-05",
+      "states": [],
+      "id": "news-b7e44f6f5f6776"
+    },
+    {
+      "title": "National Popular Vote Interstate Compact: GAME ON!!!",
+      "source": "Daily Kos",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaXVHZlhlTHI0UVVIOVN6dXljb0VCMkd4cDZXN1RQbHB5d3MxLW91X1N3MVc5MU11U0RzbkIxTmRUOVFobzliU2plQkMzUFhrYWVFeHRzVWVwMm9fTlkwNnV4cWtSNjFEOEdPa3B3bEo5QndrenEtVm9yVDJnT3pyMEZTUVd0SWpxZmY4ejhSaEpKQUlwMXVqTWFGaTdYRUhjSHdXY2I0cjVKcEstNnpnX2VB?oc=5",
+      "date": "2026-11-05",
+      "states": [],
+      "id": "news-d9974bcbdd3c09"
+    },
+    {
+      "title": "Top state-level priority? Pass the National Popular Vote Interstate Compact",
+      "source": "Daily Kos",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOWmlPQWNJVDFVNUFZVWVJV21fdlZubmZfZG5XMVpobm9lSmVtbkpXTmZ4WlhEY1JJYXFzMG5jRkVzQXFtTnlrb2Njei1QQUlGMENlYm83alc2TVdDWjdOek9hZUhIWEF1c2V3UFVlZVl1MWtKMm1NOVpPeEtXTjUtbEVSOVliMThMVW5OOU43R3lXZU1rSlpGTndqOUEtNnBtc1hMVU92aGxTWEhjSzBPeWNib2hibVRlLVJnVE1tbE93b2dYZmNkTjlKUzFtYzhUZ2IyUg?oc=5",
+      "date": "2026-11-04",
+      "states": [],
+      "id": "news-ccd3c3324d81ff"
+    },
+    {
+      "title": "Can Democrats end the Electoral College by 2028? What the National Popular Vote Interstate Compact needs",
+      "source": "Nacionale",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVlpmZ0JXR2V6U2lzU1JJeTF1eF9EYW56T3JPYnhkSmlmTzBqLTBfWnhPWE1jT2NNekdYZ2stRExob0VFenZnYmFsNnhKTmRHS0ZZd2JGNmNxMUJ0b29QUFlTY1pCckxtVHJHeDZoVVRNTjNVYVZaOHVUUkdSUllLcVgtdFJYZ3hrd0xsSnp3Nm1CeUp1T0JKSUswdmJLVjJkT0lrNl9ZZnBkVnY5TTY3QUV6WnNZeVd4M3FSMU5qSQ?oc=5",
+      "date": "2026-11-04",
+      "states": [],
+      "id": "news-d27d6af8b535f6"
+    },
+    {
+      "title": "Op-Ed: Arizona should reject National Popular Vote and retain its unique voice",
+      "source": "The Center Square",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOU1NBeUVrNzlkYzFaS2hTTXc3SFFILVI5ZEhLYlFNemRrS1J0YVYwMXdxV19yd1M1SnY0M3E3WDV6elh3UXJwVWZZVGR5MmVDeU54NWtYc0pqTU11bkNjazlYUUdqVjhTcUJ2cGM3bmtDM3dWTm85ZDBvQk5MalllZEhTcHFYNTlKNjRaX3ptZnI2ZWvSAZgBQVVfeXFMTnBhLW9iN241TjhJRkFkM01EZ0VqUzRuMzRRSlJ0UlhtZDZKLWY1NDNaVTZtUEFxZWxfbDEtN1BzbEphbEZHNWNOLW5yelgzRC1PdFJ5d0RtSVI3bTlwWmZjeFhuNTdrYzVfT29BTUpmRGh6dS1Dekc1bUtJRWxIY2NvcGsyaF8tZ3RfbWVQRjBmd1FDMDJ4Wks?oc=5",
+      "date": "2026-11-03",
+      "states": [
+        "AZ"
+      ],
+      "id": "news-87c7580effee63"
+    },
+    {
+      "title": "National popular vote indirectly on the midterm ballot",
+      "source": "The Center Square",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPc2xaZVVZNlpQV2tGY05qRWYxSW1mWnBLdlZDZFVXbl9RSWZ1VE5YUy1pWEl6dUtiajltREtvUHFfdE9uaG9BaExXRWp1WE1USXBrbE1hN3lXUXMtRUlCbmdIR0tGSmVCSlFqc3NlSGt6RHlIZHUtdmNjdWlNYXc1SVB3ZU9YdWl6aE55WGo0UGR2bVVN0gGaAUFVX3lxTE9BXzZfSVVVRUtIOHdGMldKV0tuZURpcGh5cnlyQ1c0VEhZVFp3Y3lYbXZQb3h0Y0J1Rmt4ak5YQWNCcEJQaUpnU1ZIY0JwTm9Ha2ZHMkpfSmxLalJ2ZHJtLVA4UXJocE9lOFlPRFlkTWZwY0dtUDZNelgweGJyNUxRckFzRjVpa0pWeDl0eThLbng2djdyajh5LUE?oc=5",
+      "date": "2026-10-29",
+      "states": [],
+      "id": "news-70055bb2ef1664"
+    },
+    {
+      "title": "Why the 2026 midterms are critical for the future of the National Popular Vote Interstate Compact (NPVIC).",
+      "source": "The Fulcrum",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZnVUa3hQMHR2Y3lvQjYwNmszOGVDSHJCc0ZUcUFDR3Z4QTE3c050S19vcDdNRWVJN1lkU0g2bUZlMHlfOWhkZWg1NFU5TUlOUGdDQXlDelpodkZZbFlLMDcxdUdQc2lWdDhobG5mWFQxcTI2OVpRRnlBaXlmZUYtMDctVEM?oc=5",
+      "date": "2026-10-25",
+      "states": [],
+      "id": "news-857e646d90e47d"
+    }
+  ],
+  "feeds": {
+    "Bill discovery · MediaWiki API": {
+      "url": "https://en.wikipedia.org/w/api.php?action=parse&page=National_Popular_Vote_Interstate_Compact&prop=text%7Crevid&formatversion=2&format=json",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Bill leads · AZ": {
+      "url": "https://www.nationalpopularvote.com/state/az",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Bill leads · PA": {
+      "url": "https://www.nationalpopularvote.com/state/pa",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Bill leads · WI": {
+      "url": "https://www.nationalpopularvote.com/state/wi",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Bill leads · NV": {
+      "url": "https://www.nationalpopularvote.com/state/nv",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "News · Michigan": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Michigan%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Bill leads · MI": {
+      "url": "https://www.nationalpopularvote.com/state/mi",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "News · Nevada": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Nevada%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "News · Pennsylvania": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Pennsylvania%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "News · Arizona": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Arizona%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "News · Wisconsin": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Wisconsin%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "News · National": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20(compact%20OR%20interstate)%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Change feed · WI": {
+      "url": "https://api.statescan.org/v1/states/WI/changes.rss",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Compact membership · NCSL": {
+      "url": "https://www.ncsl.org/elections-and-campaigns/national-popular-vote",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Change feed · MI": {
+      "url": "https://api.statescan.org/v1/states/MI/changes.rss",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Change feed · NV": {
+      "url": "https://api.statescan.org/v1/states/NV/changes.rss",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Change feed · AZ": {
+      "url": "https://api.statescan.org/v1/states/AZ/changes.rss",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Change feed · PA": {
+      "url": "https://api.statescan.org/v1/states/PA/changes.rss",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Official bill · PA 2025 HB 270": {
+      "url": "https://www.palegis.us/legislation/bills/2025/hb0270",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Official bill · MI 2025 HB 6213": {
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6213&printerFriendly=true",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Official bill search · MI": {
+      "url": "https://www.legislature.mi.gov/Search/ExecuteSearch?contentFullText=%22national+popular+vote%22&docTypes=Bills&sessions=2027-2028",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Official bill search · NV": {
+      "url": "https://www.leg.state.nv.us/App/NELIS/REL/84th2027/HomeBill/BillsTab?PageSize=2147483647&Filters.DisplayTitles=true",
+      "status": "ok",
+      "lastSuccess": "2026-11-18T00:21:02.035Z"
+    },
+    "Official bill search · PA": {
+      "url": "https://www.palegis.us/legislation/bills/bill-keyword-search?searchBy=keyword&sessYr=2027&sessInd=0&keyword=national+popular+vote&searchType=text&billType=B",
+      "status": "unavailable",
+      "lastSuccess": null
+    }
+  },
+  "wikiRevision": 1386107662,
+  "bills": {
+    "AZ": [
+      {
+        "id": "SB 1300",
+        "session": 2026,
+        "stage": "closed",
+        "date": "2026-06-13",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview/84834"
+      },
+      {
+        "id": "HB 4013",
+        "session": 2026,
+        "stage": "closed",
+        "date": "2026-06-13",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview/85524"
+      }
+    ],
+    "WI": [
+      {
+        "id": "SB 1117",
+        "session": 2025,
+        "stage": "closed",
+        "date": "2026-03-23",
+        "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb1117"
+      },
+      {
+        "id": "AB 1152",
+        "session": 2025,
+        "stage": "closed",
+        "date": "2026-03-23",
+        "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab1152"
+      }
+    ],
+    "NV": [
+      {
+        "id": "AJR 6",
+        "session": 2025,
+        "stage": "closed",
+        "date": "2025-06-03",
+        "route": "amendment",
+        "url": "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11957"
+      }
+    ],
+    "PA": [
+      {
+        "id": "HB 270",
+        "session": 2025,
+        "stage": "introduced",
+        "date": "2025-04-09",
+        "closes": "2026-11-30",
+        "url": "https://www.palegis.us/legislation/bills/2025/hb0270",
+        "code": "PA",
+        "route": "bill",
+        "action": "Referred to Intergovernmental Affairs & Operations"
+      }
+    ],
+    "MI": [
+      {
+        "id": "HB 6213",
+        "session": 2025,
+        "stage": "introduced",
+        "date": "2026-07-14",
+        "closes": "2026-12-31",
+        "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6213&printerFriendly=true",
+        "code": "MI",
+        "route": "bill",
+        "action": "bill electronically reproduced 07/03/2026"
+      }
+    ]
+  }
+}

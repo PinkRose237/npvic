@@ -1,0 +1,322 @@
+[
+  {
+    "id": 2,
+    "fingerprint": "d46f64ea34d5",
+    "date": "2026-11-18T00:17:32.241Z",
+    "modelVersion": "1.0.0",
+    "committed": 222,
+    "estimate": 14,
+    "states": [
+      {
+        "code": "PA",
+        "stage": "Awaiting new filing",
+        "p": 52,
+        "range": [
+          32,
+          71
+        ],
+        "signals": [
+          {
+            "label": "Governor open to exploring adoption",
+            "shift": 0.3,
+            "url": "https://penncapital-star.com/voting/pennsylvanias-democratic-trifecta-renews-calls-to-join-popular-national-vote-compact/"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "HB 270",
+            "session": 2025,
+            "stage": "introduced",
+            "date": "2025-04-09"
+          }
+        ]
+      },
+      {
+        "code": "MI",
+        "stage": "Awaiting new filing",
+        "p": 39,
+        "range": [
+          22,
+          59
+        ],
+        "signals": [
+          {
+            "label": "Previous Democratic trifecta did not enact the compact",
+            "shift": -0.25,
+            "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "HB 6213",
+            "session": 2025,
+            "stage": "introduced",
+            "date": "2026-07-14"
+          }
+        ]
+      },
+      {
+        "code": "AZ",
+        "stage": "Awaiting new filing",
+        "p": 52,
+        "range": [
+          32,
+          71
+        ],
+        "signals": [
+          {
+            "label": "Incoming Senate president signaled agenda support",
+            "shift": 0.3,
+            "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "SB 1300",
+            "session": 2026,
+            "stage": "closed",
+            "date": "2026-06-13"
+          },
+          {
+            "id": "HB 4013",
+            "session": 2026,
+            "stage": "closed",
+            "date": "2026-06-13"
+          }
+        ]
+      },
+      {
+        "code": "WI",
+        "stage": "Awaiting new filing",
+        "p": 55,
+        "range": [
+          36,
+          74
+        ],
+        "signals": [
+          {
+            "label": "Public legislative priority and governor-elect interest",
+            "shift": 0.45,
+            "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "SB 1117",
+            "session": 2025,
+            "stage": "closed",
+            "date": "2026-03-23"
+          },
+          {
+            "id": "AB 1152",
+            "session": 2025,
+            "stage": "closed",
+            "date": "2026-03-23"
+          }
+        ]
+      },
+      {
+        "code": "NV",
+        "stage": "Awaiting new filing",
+        "p": 55,
+        "range": [
+          36,
+          74
+        ],
+        "signals": [
+          {
+            "label": "Governor-elect publicly supports adoption",
+            "shift": 0.6,
+            "url": "https://www.kolotv.com/2026/11/12/incoming-nevada-governor-says-electoral-college-was-created-with-racist-underpinnings-calls-state-join-popular-vote-compact/"
+          },
+          {
+            "label": "One regular legislative session before the cutoff",
+            "shift": -0.35,
+            "url": "https://www.leg.state.nv.us/App/NELIS/REL/84th2027/SessionInformation"
+          },
+          {
+            "label": "Both chambers previously passed a standalone bill",
+            "shift": 0.2,
+            "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bills/Vetoed"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "AJR 6",
+            "session": 2025,
+            "stage": "closed",
+            "date": "2025-06-03"
+          }
+        ]
+      }
+    ],
+    "changes": [
+      "MI: official bill record updated."
+    ]
+  },
+  {
+    "id": 1,
+    "fingerprint": "d209c22ab1ad",
+    "date": "2026-11-18T00:12:05.251Z",
+    "modelVersion": "1.0.0",
+    "committed": 222,
+    "estimate": 14,
+    "states": [
+      {
+        "code": "PA",
+        "stage": "Awaiting new filing",
+        "p": 52,
+        "range": [
+          32,
+          71
+        ],
+        "signals": [
+          {
+            "label": "Governor open to exploring adoption",
+            "shift": 0.3,
+            "url": "https://penncapital-star.com/voting/pennsylvanias-democratic-trifecta-renews-calls-to-join-popular-national-vote-compact/"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "HB 270",
+            "session": 2025,
+            "stage": "introduced",
+            "date": "2025-04-09"
+          }
+        ]
+      },
+      {
+        "code": "MI",
+        "stage": "Awaiting new filing",
+        "p": 39,
+        "range": [
+          22,
+          59
+        ],
+        "signals": [
+          {
+            "label": "Previous Democratic trifecta did not enact the compact",
+            "shift": -0.25,
+            "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "HB 6213",
+            "session": 2025,
+            "stage": "introduced",
+            "date": "2026-07-03"
+          }
+        ]
+      },
+      {
+        "code": "AZ",
+        "stage": "Awaiting new filing",
+        "p": 52,
+        "range": [
+          32,
+          71
+        ],
+        "signals": [
+          {
+            "label": "Incoming Senate president signaled agenda support",
+            "shift": 0.3,
+            "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "SB 1300",
+            "session": 2026,
+            "stage": "closed",
+            "date": "2026-06-13"
+          },
+          {
+            "id": "HB 4013",
+            "session": 2026,
+            "stage": "closed",
+            "date": "2026-06-13"
+          }
+        ]
+      },
+      {
+        "code": "WI",
+        "stage": "Awaiting new filing",
+        "p": 55,
+        "range": [
+          36,
+          74
+        ],
+        "signals": [
+          {
+            "label": "Public legislative priority and governor-elect interest",
+            "shift": 0.45,
+            "url": "https://news.ballotpedia.org/2026/11/17/new-democratic-trifectas-in-five-states-could-provide-enough-electoral-votes-for-national-popular-vote-interstate-compact-2/"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "SB 1117",
+            "session": 2025,
+            "stage": "closed",
+            "date": "2026-03-23"
+          },
+          {
+            "id": "AB 1152",
+            "session": 2025,
+            "stage": "closed",
+            "date": "2026-03-23"
+          }
+        ]
+      },
+      {
+        "code": "NV",
+        "stage": "Awaiting new filing",
+        "p": 55,
+        "range": [
+          36,
+          74
+        ],
+        "signals": [
+          {
+            "label": "Governor-elect publicly supports adoption",
+            "shift": 0.6,
+            "url": "https://www.kolotv.com/2026/11/12/incoming-nevada-governor-says-electoral-college-was-created-with-racist-underpinnings-calls-state-join-popular-vote-compact/"
+          },
+          {
+            "label": "One regular legislative session before the cutoff",
+            "shift": -0.35,
+            "url": "https://www.leg.state.nv.us/App/NELIS/REL/84th2027/SessionInformation"
+          },
+          {
+            "label": "Both chambers previously passed a standalone bill",
+            "shift": 0.2,
+            "url": "https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bills/Vetoed"
+          }
+        ],
+        "active": null,
+        "bills": [
+          {
+            "id": "AJR 6",
+            "session": 2025,
+            "stage": "closed",
+            "date": "2025-06-03"
+          }
+        ]
+      }
+    ],
+    "changes": [
+      "Published the baseline and verified the five-state electoral paths."
+    ]
+  }
+]
