@@ -30,9 +30,10 @@ if (today > cutoff && prior) {
 }
 
 const collected = await collect(prior, stamp)
-const members = collected.membership?.members ?? prior?.forecast.members ?? seedMembers
+const currentMembers = collected.membership?.members ?? prior?.forecast.members ?? seedMembers
+const members = Object.fromEntries(Object.entries(currentMembers).sort(([a], [b]) => a.localeCompare(b)))
 const news = mergeStories(seedNews, prior?.news ?? [], collected.stories, today)
-const review = await reviewStories(news, prior?.review)
+const review = await reviewStories(news, process.env.REFRESH_AI === 'true' ? null : prior?.review)
 const current = forecast({ members, bills: collected.bills, today })
 const material = {
   modelVersion: current.modelVersion, members,
@@ -68,6 +69,7 @@ await writeJson(historyFile, history)
 await writeJson(snapshotFile, {
   checkedAt: stamp, today, revision: revision.id, revisedAt: revision.date,
   membershipVerifiedAt: collected.membership ? stamp : prior?.membershipVerifiedAt ?? null,
+  membershipSource: collected.membership?.source ?? prior?.membershipSource ?? 'Launch baseline',
   links, forecast: current, review, news, feeds: collected.feeds, wikiRevision: collected.wikiRevision,
   bills: collected.bills
 })

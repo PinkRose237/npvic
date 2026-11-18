@@ -1,9 +1,10 @@
 const root = document.querySelector('#content')
 const status = document.querySelector('#checked')
 const fmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
+const localFmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/New_York' })
 const pct = n => `${Math.round(n * 100)}%`
 const pctRange = (lo, hi) => `${pct(lo)}–${pct(hi)}`
-const prettyDate = value => value ? fmt.format(new Date(value.slice(0, 10) + 'T12:00:00Z')) : '—'
+const prettyDate = value => value ? (value.length === 10 ? fmt.format(new Date(value + 'T12:00:00Z')) : localFmt.format(new Date(value))) : '—'
 const html = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char])
 const validUrl = value => {
   try { return new URL(value).protocol === 'https:' ? html(value) : '#' } catch { return '#' }
@@ -73,7 +74,7 @@ function render(data, revisions) {
     </section>
 
     <section class="block" id="scenarios" aria-labelledby="scenario-title">
-      ${section('Build a path to 270', html(thresholdCopy), 'scenario-title')}
+      ${section('Build a path to 270', html(thresholdCopy + (f.remaining ? ` Adding all pending states would bring the total to ${f.max}.` : '')), 'scenario-title')}
       <div class="scenario-grid">
         <article class="card simulator">
           <div class="panel-top"><h3>Electoral vote calculator</h3><button type="button" id="clear" class="quiet">Clear selection</button></div>
@@ -122,7 +123,7 @@ function render(data, revisions) {
           <div><h3>Uncertainty and validation</h3><p>The range shows what happens when all pending states face weaker or stronger adoption conditions. The historical baseline’s leave-one-election-out Brier score is ${f.backtest.brier.toFixed(3)} across ${f.backtest.joined + f.backtest.missed} cases. The full five-state forecast has limited validation and no resolved 2028 outcomes.</p><p>OpenCode Go triages headlines using DeepSeek V4.1 Flash. Forecast revisions use verified bill records and documented assumptions.</p></div>
         </div>
         <details><summary>Historical cohorts</summary><ul class="cohorts">${f.backtest.cohorts.map(cohort => `<li>${link(cohort.source, `${cohort.year} election`)} · Enacted: ${html(cohort.joined.join(', ') || 'none')} · No enactment: ${html(cohort.missed.join(', '))}</li>`).join('')}</ul></details>
-        <details><summary>Member states · ${f.committed} electoral votes</summary><ul class="member-list">${Object.entries(f.members).sort(([a], [b]) => a.localeCompare(b)).map(([name, joined]) => `<li><span>${html(name)}</span><small>${joined}</small></li>`).join('')}</ul></details>
+        <details><summary>Member states · ${f.committed} electoral votes</summary><p class="muted member-source">Verified ${prettyDate(data.membershipVerifiedAt)} · ${html(data.membershipSource)}</p><ul class="member-list">${Object.entries(f.members).sort(([a], [b]) => a.localeCompare(b)).map(([name, joined]) => `<li><span>${html(name)}</span><small>${joined}</small></li>`).join('')}</ul></details>
         <details><summary>Source checks · ${Object.values(data.feeds).filter(feed => feed.status === 'ok').length}/${Object.keys(data.feeds).length} available</summary><ul class="feeds">${Object.entries(data.feeds).map(([name, feed]) => `<li>${link(feed.url, name)}<span>${feed.status === 'ok' ? 'Checked' : 'Unavailable'} · ${prettyDate(feed.lastSuccess)}</span></li>`).join('')}</ul></details>
         <div class="source-links">${link(data.links.membership, 'Membership')}${link(data.links.allocation, 'Electoral votes')}${link(data.links.election, '2026 results')}${link(data.links.compact, 'Compact text')}${link(data.links.video, 'Video brief')}</div>
       </div>

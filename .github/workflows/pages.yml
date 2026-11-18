@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: '23 11 * * *'
   workflow_dispatch:
+    inputs:
+      refresh_ai:
+        description: Reclassify the current batch of headlines
+        type: boolean
+        default: false
 
 concurrency:
   group: compact-watch-pages
@@ -31,6 +36,7 @@ jobs:
       - run: npm test
       - name: Refresh sources and forecast
         env:
+          REFRESH_AI: ${{ inputs.refresh_ai }}
           OPENCODE_GO_API_KEY: ${{ secrets.OPENCODE_GO_API_KEY }}
         run: npm run refresh
       - run: npm run build

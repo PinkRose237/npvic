@@ -26,9 +26,9 @@ export function safeUrl(value, base) {
   }
 }
 
-async function get(url) {
+async function get(url, headers = {}) {
   const response = await fetch(url, {
-    headers: { 'User-Agent': 'CompactWatch/1.0 (https://github.com/PinkRose237/npvic)' },
+    headers: { 'User-Agent': 'CompactWatch/1.0 (https://github.com/PinkRose237/npvic)', ...headers },
     signal: AbortSignal.timeout(12_000)
   })
   if (!response.ok) throw new Error(`HTTP ${response.status}`)
@@ -94,7 +94,28 @@ function discoveryFromWiki(body) {
       .get().find(item => isOfficial(item, active.code))
     if (url) bills.push({ code: active.code, id: normalizeId(id), session, url: url.href })
   }
-  return { revision: revid, bills }
+  const members = {}
+  const memberTable = $('caption').filter((_, el) => $(el).text().includes('Jurisdictions enacting law')).parent()
+  for (const row of memberTable.find('tr').toArray()) {
+    const [number, name, adopted, , , votes] = $(row).children('th,td').map((_, el) => clean($(el).text())).get()
+    const date = dateOnly(adopted)
+    if (!/^\d+$/.test(number) || !date || !Object.hasOwn(allocation, name) || Number(votes) !== allocation[name]) continue
+    members[name] = Number(date.slice(0, 4))
+  }
+  return { revision: revid, bills, members }
+}
+
+function advocacyMembers(body) {
+  const $ = load(body)
+  const statement = $('p').filter((_, el) => /enacted into law in \d+ jurisdictions possessing \d+ electoral votes/i.test(clean($(el).text()))).first()
+  const match = clean(statement.text()).match(/in (\d+) jurisdictions possessing (\d+) electoral votes/i)
+  const list = clean(statement.next('ul').text())
+  if (!match || !list) throw new Error('Membership totals are missing')
+  const names = Object.keys(allocation).filter(name => new RegExp(`(?<!West |New |North |South )\\b${name}\\b`).test(list))
+  if (Number(match[1]) !== names.length || Number(match[2]) !== names.reduce((sum, name) => sum + allocation[name], 0)) {
+    throw new Error('Membership cross-check did not reconcile')
+  }
+  return names
 }
 
 function advocacyCandidates(html, state) {
@@ -109,18 +130,19 @@ function advocacyCandidates(html, state) {
 }
 
 function stageFromActions(actions) {
-  const latest = actions[0]
-  const text = latest.text
-  if (/vetoed|failed to pass|died in committee|withdrawn|laid on the table|indefinitely postponed|not concurred|returned without approval/i.test(text)) return 'closed'
-  if (/signed (?:by|into law)|became (?:a )?law|(?:approved by|chaptered by) (?:the )?governor|public act no\.|chapter \d+.*(?:202[7-8]|laws)|act no\. \d+/i.test(text)) return 'signed'
-  if (/presented to (?:the )?governor|sent to (?:the )?governor|transmitted to (?:the )?governor|both (?:houses|chambers) passed/i.test(text)) return 'both'
+  const terminal = actions.find(row =>
+    /signed (?:by|into law)|became (?:a )?law|(?:approved by|chaptered by) (?:the )?governor|public act no\.|chapter \d+.*(?:202[7-8]|laws)|act no\. \d+|vetoed|failed to pass|died in committee|withdrawn|laid on the table|indefinitely postponed|not concurred|returned without approval|no further action allowed/i.test(row.text))
+  if (terminal) {
+    return /vetoed|failed to pass|died in committee|withdrawn|laid on the table|indefinitely postponed|not concurred|returned without approval|no further action allowed/i.test(terminal.text) ? 'closed' : 'signed'
+  }
+  if (actions.some(row => /presented to (?:the )?governor|sent to (?:the )?governor|delivered to (?:the )?governor|transmitted to (?:the )?governor|both (?:houses|chambers) passed/i.test(row.text))) return 'both'
   if (actions.some(row => /reconsideration.*(?:passed|adopted)|rescinded/i.test(row.text))) return 'introduced'
   const passed = actions.filter(row => /(?:read (?:a )?third time and )?passed|(?:^|\b)final passage|(?:^|\b)concurred in/i.test(row.text) &&
     !/failed|not |resolution|motion|committee|referred|schedule|ordered|before final/i.test(row.text))
   const chambers = new Set(passed.map(row => row.chamber).filter(Boolean))
   if (chambers.size === 2) return 'both'
   if (passed.length) return 'chamber'
-  if (actions.some(row => /reported favorably|reported with recommendation (?:that )?the bill (?:be|do) pass|recommended for passage|report.*do pass|committee.*approved/i.test(row.text))) return 'committee'
+  if (actions.some(row => /reported favorably|reported with recommendation (?:that )?the bill (?:be|do) pass|recommended for passage|report.*do pass|committee.*approved|from committee:.*do pass/i.test(row.text))) return 'committee'
   if (actions.some(row => /referred|introduced|first read|prefiled|read first|read a first/i.test(row.text))) return 'introduced'
   return null
 }
@@ -192,6 +214,22 @@ export function parseArizona(body, bill) {
   return { ...bill, route: 'bill', stage, date: dates.at(-1), action: clean(info.GovernorAction || disposition || 'Bill history recorded') }
 }
 
+export function parseNevada(body, bill) {
+  const $ = load(body)
+  if (!topic.test(clean($('body').text()))) return null
+  const actions = $('caption').filter((_, el) => clean($(el).text()) === 'Bill History')
+    .parent().find('tbody tr').map((_, row) => {
+      const [rawDate, text, journal] = $(row).children('td').map((__, cell) => clean($(cell).text())).get()
+      const date = dateOnly(rawDate)
+      const chamber = journal?.match(/(Assembly|Senate): Journal/)?.[1]
+      return date && text ? { date, text, chamber } : null
+    }).get().sort((a, b) => b.date.localeCompare(a.date))
+  if (!actions.length) return null
+  const stage = stageFromActions(actions)
+  const route = /^[AS]JR/.test(bill.id) ? 'amendment' : 'bill'
+  return stage && { ...bill, route, stage, date: actions[0].date, action: actions[0].text.slice(0, 200) }
+}
+
 async function officialBill(row, state, poll) {
   const label = `Official bill · ${state.code} ${row.session} ${row.id}`
   const bill = { ...row, code: state.code }
@@ -210,6 +248,18 @@ async function officialBill(row, state, poll) {
       return parsed
     })
   }
+  if (state.code === 'NV') {
+    const actual = safeUrl(row.url)
+    const match = actual?.pathname.match(/^(.*\/Bill)\/(\d+)(?:\/Overview)?\/?$/i)
+    if (!match || !isOfficial(actual, 'NV')) return null
+    const url = new URL(`${match[1]}/FillSelectedBillTab`, actual.origin)
+    url.search = new URLSearchParams({ billKey: match[2], selectedTab: 'Overview' })
+    return poll(label, url.href, body => {
+      const parsed = parseNevada(body, bill)
+      if (!parsed) throw new Error('No verified Nevada bill history')
+      return parsed
+    }, { 'X-Requested-With': 'XMLHttpRequest', Referer: actual.href })
+  }
   return poll(label, row.url, body => {
     const parsed = parseOfficial(body, bill)
     if (!parsed) throw new Error('No verified action could be parsed')
@@ -221,7 +271,7 @@ function searchCandidates(body, code, year, base) {
   const $ = load(body)
   const results = $('a[href]').map((_, el) => {
     const url = safeUrl($(el).attr('href'), base)
-    const id = $(el).text().match(billNumber)?.[1]
+    const id = $(el).text().replace(/Assembly Bill/i, 'AB').replace(/Senate Bill/i, 'SB').match(billNumber)?.[1]
     if (!isOfficial(url, code) || !id) return null
     if (code === 'PA' && !new RegExp(`^/legislation/bills/${year}/[hs]b0?\\d+$`, 'i').test(url.pathname)) return null
     if (code === 'MI') {
@@ -229,6 +279,9 @@ function searchCandidates(body, code, year, base) {
       if (!objectName || !new RegExp(`^(?:${year}|${year + 1})-[HS]B-\\d+$`).test(objectName)) return null
       url.pathname = '/Bills/Bill'
       url.searchParams.set('printerFriendly', 'true')
+    }
+    if (code === 'WI') {
+      if (!new RegExp(`^/${year}/proposals/(?:reg/(?:sen|asm)/bill/)?[as]b\\d+$`, 'i').test(url.pathname) || !topic.test($(el).parent().parent().text())) return null
     }
     if (code === 'NV') {
       if (!url.pathname.includes('/Bill/') || !topic.test($(el).parent().parent().text())) return null
@@ -275,9 +328,9 @@ export function mergeStories(seed, previous, sources, today) {
 
 export async function collect(previous, stamp) {
   const metrics = { ...(previous?.feeds ?? {}) }
-  async function poll(id, url, parse) {
+  async function poll(id, url, parse, headers = {}) {
     try {
-      const value = parse(await get(url))
+      const value = parse(await get(url, headers))
       metrics[id] = { url, status: 'ok', lastSuccess: stamp }
       return value
     } catch (error) {
@@ -291,25 +344,34 @@ export async function collect(previous, stamp) {
   const nextPa = 'https://www.palegis.us/legislation/bills/bill-keyword-search?searchBy=keyword&sessYr=2027&sessInd=0&keyword=national+popular+vote&searchType=text&billType=B'
   const nextMi = 'https://www.legislature.mi.gov/Search/ExecuteSearch?contentFullText=%22national+popular+vote%22&docTypes=Bills&sessions=2027-2028'
   const nextNv = 'https://www.leg.state.nv.us/App/NELIS/REL/84th2027/HomeBill/BillsTab?PageSize=2147483647&Filters.DisplayTitles=true'
-  const [membership, index, headlineFeeds, changeFeeds, advocate, officialLeads] = await Promise.all([
+  const nextWi = 'https://docs.legis.wisconsin.gov/2027/proposals/reg'
+  const [ncsl, index, advocacy, headlineFeeds, changeFeeds, advocate, officialLeads] = await Promise.all([
     poll('Compact membership · NCSL', links.membership, parseMembership),
     poll('Bill discovery · MediaWiki API', wiki, discoveryFromWiki),
+    poll('Compact membership · National Popular Vote', 'https://www.nationalpopularvote.com/state-status', advocacyMembers),
     Promise.all([['National', newsQuery], ...states.map(({ name }) => [name, `"national popular vote" "${name}"`])]
       .map(([name, query]) => poll(`News · ${name}`, rssSearch(query), parseRss))),
     Promise.all(states.map(state => poll(`Change feed · ${state.code}`, `https://api.statescan.org/v1/states/${state.code}/changes.rss`, body =>
       parseRss(body).filter(item => topic.test(item.title)).map(item => ({ ...item, states: [state.code], source: 'StateScan', signal: true }))))),
     Promise.all(states.map(state => poll(`Bill leads · ${state.code}`, `https://www.nationalpopularvote.com/state/${state.code.toLowerCase()}`, body => advocacyCandidates(body, state)))),
-    Promise.all([['MI', nextMi], ['PA', nextPa], ['NV', nextNv]].map(([code, url]) =>
-      poll(`Official bill search · ${code}`, url, body => searchCandidates(body, code, 2027, url))))
+    Promise.all([
+      ['MI', nextMi, 'Michigan'], ['PA', nextPa, 'Pennsylvania'], ['NV', nextNv, 'Nevada'],
+      ['WI', nextWi + '/sen/bill', 'Wisconsin Senate'], ['WI', nextWi + '/asm/bill', 'Wisconsin Assembly']
+    ].map(([code, url, name]) => poll(`Official bill search · ${name}`, url, body => searchCandidates(body, code, 2027, url))))
   ])
+  const corroborated = advocacy && index && advocacy.length === Object.keys(index.members).length &&
+    advocacy.every(name => Object.hasOwn(index.members, name))
+  const membership = ncsl ? { members: ncsl.members, source: 'NCSL' } :
+    (corroborated ? { members: index.members, source: 'National Popular Vote and MediaWiki' } : null)
   const bills = {}
   await Promise.all(states.map(async state => {
-    const prior = previous?.bills?.[state.code] ?? state.bills
-    const candidates = new Map(prior.map(row => [`${row.session}:${row.id}`, row]))
+    const prior = previous?.bills?.[state.code] ?? []
+    const keyFor = row => `${row.session}:${row.id}`
+    const candidates = new Map([...state.bills, ...prior].map(row => [keyFor(row), row]))
+    for (const row of state.bills.filter(bill => bill.stage === 'closed')) candidates.set(keyFor(row), row)
     const leads = [...(index?.bills ?? []), ...advocate.flat().filter(Boolean), ...officialLeads.flat().filter(Boolean)]
     for (const row of leads.filter(row => row.code === state.code)) {
-      const key = `${row.session}:${row.id}`
-      if (!candidates.has(key)) candidates.set(key, row)
+      if (!candidates.has(keyFor(row))) candidates.set(keyFor(row), row)
     }
     bills[state.code] = (await Promise.all([...candidates.values()].map(async row => {
       // Closed seed bills are archival. Existing bills remain monitored across

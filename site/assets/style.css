@@ -129,6 +129,7 @@ fieldset {min-width:0;border:0;margin:17px 0;padding:0;display:flex;gap:7px}
 .method-intro p {color:var(--muted);margin-top:9px;max-width:57ch}
 .method details {border-top:1px solid var(--border);padding:11px 0}
 .method summary {cursor:pointer;font-weight:600}
+.member-source {font-size:13px;margin-top:6px}
 .member-list {display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px 20px}
 .member-list li,.feeds li {display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .member-list small,.feeds span {color:var(--muted);font:11px var(--mono)}

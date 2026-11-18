@@ -87,9 +87,9 @@ export const states = [
     signals: [
       { label: 'Governor-elect publicly supports adoption', shift: 0.60, url: links.ford },
       { label: 'One regular legislative session before the cutoff', shift: -0.35, url: links.nevada },
-      { label: 'Both chambers previously passed a standalone bill', shift: 0.20, url: 'https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bills/Vetoed' }
+      { label: 'Both chambers previously passed a standalone bill', shift: 0.20, url: 'https://www.leg.state.nv.us/App/NELIS/REL/80th2019/Bill/6289/Overview' }
     ],
-    bills: [{ id: 'AJR 6', session: 2025, stage: 'closed', date: '2025-06-03', route: 'amendment', url: 'https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11957' }]
+    bills: [{ id: 'AJR 6', session: 2025, stage: 'closed', date: '2025-04-12', route: 'amendment', url: 'https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11957' }]
   }
 ]
 
