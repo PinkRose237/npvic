@@ -52,7 +52,7 @@ function resolveState(state, bills, members, today, prior) {
   const activeBills = bills.filter(bill => {
     const currentCycle = bill.session >= 2027 || bill.stage === 'signed'
     const open = !bill.closes || today <= bill.closes || bill.stage === 'signed'
-    return currentCycle && open && bill.route !== 'amendment' && bill.stage !== 'closed'
+    return currentCycle && open && bill.route !== 'amendment' && Object.hasOwn(stages, bill.stage) && stages[bill.stage].weight > 0
   }).sort((a, b) => stages[b.stage].weight - stages[a.stage].weight || b.date.localeCompare(a.date))
   const active = activeBills[0] ?? null
   const days = (Date.parse(deadline) - Date.parse(today)) / 86_400_000

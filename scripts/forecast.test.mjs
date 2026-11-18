@@ -28,10 +28,12 @@ test('counts members once and adjusts the required paths on outside adoption', (
 test('revises the aggregate only for a viable legislative path', () => {
   const result = run(seedMembers, startingBills, '2027-03-01')
   const fresh = { id: 'HB 12', session: 2027, stage: 'chamber', date: '2027-03-01' }
-  const regular = run(seedMembers, { ...startingBills, PA: [fresh] }, '2027-03-01')
+  const lead = { id: 'HB 13', session: 2027, discovery: 'Official search' }
+  const regular = run(seedMembers, { ...startingBills, PA: [lead, fresh] }, '2027-03-01')
   const amendment = run(seedMembers, { ...startingBills, PA: [{ ...fresh, route: 'amendment' }] }, '2027-03-01')
   assert.ok(regular.estimates[1].probability > result.estimates[1].probability)
   assert.equal(amendment.estimates[1].probability, result.estimates[1].probability)
+  assert.equal(regular.states.find(state => state.code === 'PA').active.id, fresh.id)
 })
 
 test('does not mistake government support for an enacted bill', () => {
