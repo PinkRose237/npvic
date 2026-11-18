@@ -298,11 +298,14 @@ function parseRss(body) {
   return $('item').map((_, el) => {
     const item = $(el)
     const title = clean(item.find('title').text())
-    const source = clean(item.find('source').text())
-    const url = safeUrl(item.find('link').text())
+    const source = clean(item.children().filter((_, tag) => /^(?:News:)?source$/i.test(tag.name ?? '')).text())
+    const address = item.find('link').text()
+    const redirect = /^https?:\/\/www\.bing\.com\/news\/apiclick\.aspx\?/i.test(address) ? new URL(address).searchParams.get('url') : null
+    const url = safeUrl(redirect ?? address)
     const date = dateOnly(item.find('pubDate').text())
     if (!title || !url || !date) return null
-    return { title: source ? title.replace(new RegExp(' - ' + source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'), '') : title, source, url: url.href, date }
+    const related = !topic.test(title) && /electoral college/i.test(title) && topic.test(item.find('description').text())
+    return { title: source ? title.replace(new RegExp(' - ' + source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'), '') : title, source, url: url.href, date, related }
   }).get()
 }
 
@@ -313,7 +316,7 @@ export function mergeStories(seed, previous, sources, today) {
   const byId = new Map()
   for (const story of [...seed, ...previous, ...sources]) {
     if (story.date > today || (!seed.includes(story) && Date.parse(story.date) < oldest)) continue
-    if (!topic.test(story.title) && !seed.includes(story) && !story.tag && !story.signal) continue
+    if (!topic.test(story.title) && !seed.includes(story) && !story.tag && !story.signal && !story.related) continue
     const id = identity(story)
     if (!byId.has(id)) byId.set(id, { ...story, id })
   }
@@ -327,14 +330,14 @@ export function mergeStories(seed, previous, sources, today) {
 }
 
 export async function collect(previous, stamp) {
-  const metrics = { ...(previous?.feeds ?? {}) }
+  const metrics = {}
   async function poll(id, url, parse, headers = {}) {
     try {
       const value = parse(await get(url, headers))
       metrics[id] = { url, status: 'ok', lastSuccess: stamp }
       return value
     } catch (error) {
-      metrics[id] = { url, status: 'unavailable', lastSuccess: metrics[id]?.lastSuccess ?? null }
+      metrics[id] = { url, status: 'unavailable', lastSuccess: previous?.feeds?.[id]?.lastSuccess ?? null }
       console.warn(`${id}: ${error.message}`)
       return null
     }
@@ -382,8 +385,11 @@ export async function collect(previous, stamp) {
       return row
     }))).sort((a, b) => b.session - a.session || (b.date ?? '').localeCompare(a.date ?? ''))
   }))
+  const alternateHeadlines = headlineFeeds[0] === null ? await poll(
+    'News · Bing fallback', 'https://www.bing.com/news/search?format=rss&q=%22national+popular+vote%22+%22compact%22', parseRss
+  ) : []
   const stories = [
-    ...headlineFeeds.flat().filter(Boolean).map(story => ({
+    ...[...headlineFeeds.flat(), ...(alternateHeadlines ?? [])].filter(Boolean).map(story => ({
       ...story, states: states.filter(state => new RegExp(`\\b${state.name}\\b`, 'i').test(story.title)).map(state => state.code)
     })),
     ...changeFeeds.flat().filter(Boolean)
