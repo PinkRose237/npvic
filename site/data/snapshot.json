@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-11-27T20:00:22.076Z",
-  "today": "2026-11-27",
+  "checkedAt": "2026-11-28T18:59:12.395Z",
+  "today": "2026-11-28",
   "revision": 3,
   "revisedAt": "2026-11-18T00:24:54.983Z",
-  "membershipVerifiedAt": "2026-11-27T20:00:22.076Z",
+  "membershipVerifiedAt": "2026-11-28T18:59:12.395Z",
   "membershipSource": "NCSL",
   "links": {
     "membership": "https://www.ncsl.org/elections-and-campaigns/national-popular-vote",
@@ -346,22 +346,18 @@
   "review": {
     "status": "ok",
     "model": "deepseek-v4.1-flash",
-    "digest": "d2c2de078f3cc4bb70a603b678526f07580aeef1bfb7b558658f959bedbe8e1f",
+    "digest": "6ca28adb52191c3decffa843b9cb2e77ee563a8297e3f790bbbd10a3f31d35b6",
     "items": {
+      "news-614707a342a5a1": {
+        "tag": "Legal analysis",
+        "states": []
+      },
       "news-17e160cb1377df": {
         "tag": "Legislative outlook",
         "states": []
       },
-      "news-28545014af284b": {
+      "news-bfec55c03458ea": {
         "tag": "Background",
-        "states": []
-      },
-      "news-e690818bd6c9ad": {
-        "tag": "Legislative outlook",
-        "states": []
-      },
-      "news-f9509f62e4ed34": {
-        "tag": "Legal analysis",
         "states": []
       },
       "news-33c2bace6ff1e8": {
@@ -371,7 +367,7 @@
         ]
       },
       "news-3e06381169abf7": {
-        "tag": "Bill activity",
+        "tag": "Legislative outlook",
         "states": [
           "WI"
         ]
@@ -379,20 +375,19 @@
       "news-8dc7678c8d8f97": {
         "tag": "Legislative outlook",
         "states": []
-      },
-      "news-97585e34837b92": {
-        "tag": "Legislative outlook",
-        "states": []
-      },
-      "news-ba844e63a74a37": {
-        "tag": "Background",
-        "states": [
-          "WI"
-        ]
       }
     }
   },
   "news": [
+    {
+      "title": "WATKINS: The National Popular Vote Compact: Constitutionally infirm and bad policy",
+      "source": "The North State Journal",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQaG1kcldyYUlscGh6c09oSHM4ZVdfT1B6dW11TlNVV0R4WFplbFZnSXJfVERBZ1FDdktpbFdNSkRxdWpzWkhzVmZVVE1fQjZPVU14a1FVMklwdGRLaDVmSm96ZFhhblB1dF95VmpJbWdtWWJMY0UwNTIxT3NUSTlJMHNB?oc=5",
+      "date": "2026-11-28",
+      "related": false,
+      "states": [],
+      "id": "news-614707a342a5a1"
+    },
     {
       "title": "The Electoral College is bad. The national popular vote compact won’t fix it.",
       "source": "The Boston Globe",
@@ -866,6 +861,15 @@
       "id": "news-86a983a0a6c51b"
     },
     {
+      "title": "Ford comes out in favor of National Popular vote pact",
+      "source": "FOX5 Vegas",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSWYtNGlxb1U5NklHZEJSbnVrRmJpVjhJaG13cEw0Ym1USXY4dXJyeFAwYjdMTElkQUltX2FsNklVRmhDdjJEeDgyN2R1NzlSNk9pazZpN3diVUFVdkx1QjFreG9Uakx4V0RjMzlfSk9yS0JOQUFmcHV3c1BVYjVMSnBFYnZWUkJYQUtxSEhyb1R6UHNGZWc?oc=5",
+      "date": "2026-11-12",
+      "related": false,
+      "states": [],
+      "id": "news-c5555336fb121a"
+    },
+    {
       "title": "Incoming Nevada governor says the Electoral College was created with racist underpinnings, calls for state to join popular vote compact",
       "source": "KOLO | 8 News Now",
       "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPOHY2Vm5uUkQ5aHdMQUlGUWt1WTk2bWI1NGU3bWRJUmdESjUxZHRSWEQzWEFEakZmaktKZW9WOHNLZk1nQmRLS0JpTG9DZEt0ZmZLcWhyTVZuU2hVWGxvTVdwcFpEQVZrODMxYUVvZDE0R3lfb19IMldjR3BCRWJTb0xoQVRMZWs0VlZOYmNtRzh0eTdqVVBKaWxjNkgzbUJyOTUwc2VaTGhXUXlYMXZXWTZnN2RYUi1sd2h1WHpja005N1A3Z2hIZnRTQXFScl9NR0dlMTFKMkxPWjdndnVpalJudGZrSFRzTkdBVnVpb9IBgwJBVV95cUxOelVIX1NzdW1jV0M4emdXQ2w4VGhRXzFidzVWM2VvTVBJZ2JNdDR5YUhjd0h0V2NVaDZrRFQxWkRGcjFHWWtIZnE2aGQ0N3ZIRjJndlExbVBCQ2JKY01PQkd6R1VnN2dnbXJJVGtfaG1lQW80bm1iRWJqU2R1WVhMdFlkVERVMDZsV0ZvX2llenF3RE83aW10bU5oZkdKTnJnNHpjMXV6WFNOM2dKcWg4X21CR3U3NHNkYWhCajYwQUdVb1AyQkRTUzJLZksweFpBc1JWNkY5YW92Q0p6MnR0eXU2allzWGszR2hhaE5DXzVpbDhhRUxWUC1HT0hwRF85YW5z?oc=5",
@@ -882,6 +886,15 @@
       "date": "2026-11-12",
       "states": [],
       "id": "news-f0b58c29e67e3d"
+    },
+    {
+      "title": "Ford comes out in favor of National Popular vote pact",
+      "source": "KOLO | 8 News Now",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYWJTWjBQcjZJMzZQMDVoeGlZS1laR0xDM2V2TUc4OWFUdkJ0VVpXTzIyZTh2M2REZ1N1c3BoZEl4TXFXbkRESUhOSWxsRW1xNWpXVS1Mb0ZRUkNqeWtIMlY1bC0tZ1JWc1RhNWtudE9PQ1RQSUIxODRSZlZWOE95NUVka2w1cmFLYW1NVGxJYnQ2Zw?oc=5",
+      "date": "2026-11-12",
+      "related": false,
+      "states": [],
+      "id": "news-f14343b260ba11"
     },
     {
       "title": "The Pushback Chronicles: National Popular Vote Interstate Compact Approaches Finish Line",
@@ -949,146 +962,118 @@
       "related": false,
       "states": [],
       "id": "news-dd8dc090dc33de"
-    },
-    {
-      "title": "Shapiro signals support for national popular vote as Democrats eye compact expansion",
-      "source": "fox43.com",
-      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPU3BmY0t6QTVlZUFtdVplVDdHaUhsRE41WVBoYUZKZkNENUFvWHhlOGNUVTN2cWJ2bjZIUmFJenFOMk5MVkJyQzQ3a2RtTVVUbUlEVldHbU9XNlhGR21ySHlpbDRlSG9LeFZlcEtPSkk1Y2RPSVpSZjNJNXRqWHhEM3d6SWtxbzJnY3BrbF95Tko4N2ZoVG55SWY5QWZFN19XRzgyV19qMUhTZDRJaWVBNkR0T2E0NnptQ0xEYTdXMTVFZzJsVFF1UFEzYTBhbjJFcFZ0T0NaWFIwR25rcDRvMTZOQk1yQlh6c2Q3Z0tEYnhoNTlLSlZQT09peU1Fdks2enhZMjhvMGVOc3NLdXkxVV9aa0hxQQ?oc=5",
-      "date": "2026-11-09",
-      "related": false,
-      "states": [],
-      "id": "news-00e0497fa62199"
-    },
-    {
-      "title": "National Popular Vote Compact Back in the News",
-      "source": "Outside the Beltway",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQTno1UjhLMThhWno4bFhHa0h0dUpzSkFUV0cwdmdueVZ2MW4zQ3A1dml1ZmNkZEhDbDFrZFlTVmVXMHE0emRSTWp2anctb09lUENPbW5td0xTVzFVdFNwTVd2V1FIT3FyUFdRYVJPUHY4VjB6b3hzcHpuMXhTMnJTTC1qSQ?oc=5",
-      "date": "2026-11-09",
-      "related": false,
-      "states": [],
-      "id": "news-01b679cae1b4fb"
-    },
-    {
-      "title": "Pennsylvania’s Democratic trifecta renews calls to join National Popular Vote compact",
-      "source": "Pennsylvania Capital-Star",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcmxmMENfWU5FaWRCQmhHTWtXaWgyNTRrMWZMNGx3ZXU1UkdZY3BPdnFyTlFOU0NPWnhSclVHbXVtUlRSTHlDMHNxX29QZUF3c0xzYzI5RV81dEtvdkRLLU5xOUE4cVJxS2pZN1U3WWo0Wl9YWlpHeWpIWjRxMGY5d2RtZmQ2ekFFVUZZR1c1Z3FnaHBKbURHSlBCNXo4THFIa0E2WXVlQVBKbWs5bXlQRGlpRnoxYkQyaXJxamxR?oc=5",
-      "date": "2026-11-09",
-      "states": [
-        "PA"
-      ],
-      "id": "news-0ff8cf6242bf42"
     }
   ],
   "feeds": {
     "Compact membership · National Popular Vote": {
       "url": "https://www.nationalpopularvote.com/state-status",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
-    "Bill leads · MI": {
-      "url": "https://www.nationalpopularvote.com/state/mi",
+    "Bill leads · AZ": {
+      "url": "https://www.nationalpopularvote.com/state/az",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
-    },
-    "Bill leads · WI": {
-      "url": "https://www.nationalpopularvote.com/state/wi",
-      "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
-    },
-    "Bill leads · NV": {
-      "url": "https://www.nationalpopularvote.com/state/nv",
-      "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
-    },
-    "Bill discovery · MediaWiki API": {
-      "url": "https://en.wikipedia.org/w/api.php?action=parse&page=National_Popular_Vote_Interstate_Compact&prop=text%7Crevid&formatversion=2&format=json",
-      "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
-    },
-    "News · Arizona": {
-      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Arizona%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Bill leads · PA": {
       "url": "https://www.nationalpopularvote.com/state/pa",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
-    "News · Wisconsin": {
-      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Wisconsin%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+    "Bill discovery · MediaWiki API": {
+      "url": "https://en.wikipedia.org/w/api.php?action=parse&page=National_Popular_Vote_Interstate_Compact&prop=text%7Crevid&formatversion=2&format=json",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "News · Michigan": {
       "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Michigan%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
-    },
-    "News · Pennsylvania": {
-      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Pennsylvania%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
-    },
-    "News · Nevada": {
-      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Nevada%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
-    },
-    "Official bill search · Wisconsin Senate": {
-      "url": "https://docs.legis.wisconsin.gov/2027/proposals/reg/sen/bill",
-      "status": "unavailable",
-      "lastSuccess": null
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Official bill search · Wisconsin Assembly": {
       "url": "https://docs.legis.wisconsin.gov/2027/proposals/reg/asm/bill",
       "status": "unavailable",
       "lastSuccess": null
     },
-    "Bill leads · AZ": {
-      "url": "https://www.nationalpopularvote.com/state/az",
+    "Official bill search · Michigan": {
+      "url": "https://www.legislature.mi.gov/Search/ExecuteSearch?contentFullText=%22national+popular+vote%22&docTypes=Bills&sessions=2027-2028",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
+    },
+    "News · Nevada": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Nevada%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
+    },
+    "News · Wisconsin": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Wisconsin%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
+    },
+    "Bill leads · WI": {
+      "url": "https://www.nationalpopularvote.com/state/wi",
+      "status": "ok",
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
+    },
+    "News · Arizona": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Arizona%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
+    },
+    "News · Pennsylvania": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20%22Pennsylvania%22%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
+    },
+    "Bill leads · MI": {
+      "url": "https://www.nationalpopularvote.com/state/mi",
+      "status": "ok",
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
+    },
+    "Official bill search · Wisconsin Senate": {
+      "url": "https://docs.legis.wisconsin.gov/2027/proposals/reg/sen/bill",
+      "status": "unavailable",
+      "lastSuccess": null
+    },
+    "Bill leads · NV": {
+      "url": "https://www.nationalpopularvote.com/state/nv",
+      "status": "ok",
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Official bill search · Nevada": {
       "url": "https://www.leg.state.nv.us/App/NELIS/REL/84th2027/HomeBill/BillsTab?PageSize=2147483647&Filters.DisplayTitles=true",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
-    },
-    "Official bill search · Michigan": {
-      "url": "https://www.legislature.mi.gov/Search/ExecuteSearch?contentFullText=%22national+popular+vote%22&docTypes=Bills&sessions=2027-2028",
-      "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
-    },
-    "News · National": {
-      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20(compact%20OR%20interstate)%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
-      "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Compact membership · NCSL": {
       "url": "https://www.ncsl.org/elections-and-campaigns/national-popular-vote",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
+    },
+    "News · National": {
+      "url": "https://news.google.com/rss/search?q=%22national%20popular%20vote%22%20(compact%20OR%20interstate)%20when%3A30d&hl=en-US&gl=US&ceid=US:en",
+      "status": "ok",
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Change feed · WI": {
       "url": "https://api.statescan.org/v1/states/WI/changes.rss",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Change feed · NV": {
       "url": "https://api.statescan.org/v1/states/NV/changes.rss",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Change feed · MI": {
       "url": "https://api.statescan.org/v1/states/MI/changes.rss",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Change feed · PA": {
       "url": "https://api.statescan.org/v1/states/PA/changes.rss",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Official bill search · Pennsylvania": {
       "url": "https://www.palegis.us/legislation/bills/bill-keyword-search?searchBy=keyword&sessYr=2027&sessInd=0&keyword=national+popular+vote&searchType=text&billType=B",
@@ -1098,20 +1083,20 @@
     "Change feed · AZ": {
       "url": "https://api.statescan.org/v1/states/AZ/changes.rss",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Official bill · PA 2025 HB 270": {
       "url": "https://www.palegis.us/legislation/bills/2025/hb0270",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     },
     "Official bill · MI 2025 HB 6213": {
       "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6213&printerFriendly=true",
       "status": "ok",
-      "lastSuccess": "2026-11-27T20:00:22.076Z"
+      "lastSuccess": "2026-11-28T18:59:12.395Z"
     }
   },
-  "wikiRevision": 1387906354,
+  "wikiRevision": 1388542873,
   "bills": {
     "AZ": [
       {
